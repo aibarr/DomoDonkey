@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/stickyFooter.css')
+		link(rel='stylesheet', href='/stylesheets/lavish-bootstrap.css')
+		//link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		//link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+		script(src='/javascripts/jquery.js')
+		script(src='/bootstrap/js/bootstrap.min.js')
+		script(src='/socket.io/socket.io.js')
+	body
+		div.page-header
+			h1 Donkey Domo 
+				small Controle su casa desde afuera
+		block content
+		div.footer
+			div.content-fluid
+				p.text-muted Holiwis

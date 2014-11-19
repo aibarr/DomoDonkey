@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	div.content
+		img.col-md-3(src="images/dk.png", alt="")
+		div.col-md-6
+			p led
+			div.btn-group(role="group")
+				//p Led
+				button.btn.btn-primary.active#bEnciende(onclick="Encender()") Encender
+				button.btn.btn-default.active#bApaga(onclick="Apagar()") Apagar
+
+	script.
+		var socket = io.connect();
+
+		document.getElementById('bApaga').disabled = true;
+
+		var Encender = function(){
+			socket.emit('enciende', null, function(data){
+				console.log('led Encendido');				
+				});
+			$("#bEnciende").removeClass('btn-primary').addClass('btn-default');
+			document.getElementById('bApaga').disabled = false;
+			$('#bApaga').removeClass('btn-default').addClass('btn-primary');
+			document.getElementById('bEnciende').disabled = true;
+
+		};
+
+		var Apagar = function(){
+			socket.emit('apaga', null, function(data){
+				console.log('led apagado');				
+				});
+			$('#bEnciende').removeClass('btn-default').addClass('btn-primary');
+			document.getElementById('bApaga').disabled = true;
+			$('#bApaga').removeClass('btn-primary').addClass('btn-default');
+			document.getElementById('bEnciende').disabled = false;
+
+		};
+
+
+
