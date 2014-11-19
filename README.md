@@ -11,7 +11,7 @@ Una vez clonado el proyecto, se debe entrear a la carpeta y ejecutar el comando:
 
 Para iniciar la aplicación, se debe estar dentro de la carpeta y ejecutar el comando:
 
-	app.js
+	node app.js
 
 Luego se debe conectar el Arduíno. Se puede acceder a la carpeta desde http://localhost:3000
 
